@@ -11,7 +11,7 @@ app.use(cors());
 
 
 app.get('/', (req, res) => {
-    res.send('Hello World!')
+    res.send('Hello woo')
 })
 
 
@@ -19,10 +19,10 @@ app.get('/', (req, res) => {
 function createPrompt(code, comment) {
     let prompt;
     if (comment) {
-        prompt = "correct, reformat this code, add comments, and explain this code in detail, ensure that the output can be used in and IDE directly";
+        prompt = "correct missing chars, reformat this code, add comments, ensure that the output can be used in and IDE directly";
     }
     else {
-        prompt = "correct and reformat this code";
+        prompt = "format this code by getting rid of line numbers if there are and do not write any comments";
     }
     prompt += "\n\n```\n" + code + "\n```"
     return prompt;
@@ -30,8 +30,8 @@ function createPrompt(code, comment) {
 
 app.post('/chatAPI', async (req, res) => {
     //load prompt into gpt
-
-    const configuration = new Configuration({ apiKey: "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", });
+    
+    const configuration = new Configuration({ apiKey: "hahaha", });
     const openai = new OpenAIApi(configuration);
 
     newPrompt = createPrompt(req.body.Text, req.body.Comment);

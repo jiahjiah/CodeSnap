@@ -2,74 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width='device-width', initial-scale=1.0">
-    <title>Optical character regongnition</title>
-    <style>
-        body{
-            padding: 0px 100px;
-            font-family: sans-serif
-        }
-        .container{
-            margin-top: 50px;
-        }
-        .upper div {
-            display: inline;
-            margin-left: 100px;
-            white-space: pre;
-        }
-        .bottom{
-            margin-top: 30px;
-            display: flex;
-        }
-        .bottom div {
-            flex: 1;
-            border: 1px solid rgb(118, 118, 118);
-            height: 400px;
-            margin: 10px;
-        }
-        .bottom div img{
-            max-width: calc(100% - 20px);
-            max-height:  calc(100% - 20px);
-            margin: 10px;
-        }
-        .bottom div textarea {
-            resize: none;
-            width: calc(100% - 21px);
-            height: calc(100% - 21px);
-            padding: 10px;
-            font-size: 20px;
-            outline: none;
-            border: none;
-        }
-        .bottom div:first-child{
-            margin-left: 0px;
-            -webkit-box-align: center;
-            -webkit-box-pack: center;
-            display: -webkit-box;
-        }
-        .bottom div:last-child{
-            margin-right: 0px;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeSnap</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="conatiner">
-        <div class="upper">
-            <input type="file">
-            <button>Start</button>
-            <div class="progress"></div>
-        </div>
-        <div class="bottom">
-            <div>
-                <img src="">
-            </div>
-            <div>
-                <textarea placeholder="Image Text"></textarea>
-            </div>
-        </div>
+    <nav id="navbar">
+      <div class="logo">
+        <img src="pictureLogo.png" alt="Company Logo">
+        <img src="Screenshot_2023-06-10_133456-removebg-preview 2.png" alt="Company Name">
+      </div>
+    </nav>
+
+    <div class="title">
+      <h1>turn pictures into code</h1>
+      <img src="underline.png" alt="Underline">
     </div>
-<script src="https://unpkg.com/tesseract.js@v2.0.0-alpha.13/dist/tesseract.min.js"></script>
-<script src="script.js"></script>
+
+    <div class="box">
+      <div class="button" id="upload-container">
+        <label for="file-input" class="upload-button">
+          <img src="plusButton.png" alt="Plus Icon">
+          <span>Upload Image</span>
+        </label>
+        <input type="file" id="file-input" style="display: none;">
+        <p class="upload-status" id="upload-status">No file uploaded</p>
+      </div>
+    </div>
+
+    <div class="buttons">
+      <div class="notes-toggle">
+        <p>Comments</p>
+        <span>
+          <input type="checkbox" id="switch" />
+          <label for="switch"></label>
+        </span>
+      </div>
+      <button class="start-button">
+        <span id="start">Start</span>
+        <img src="startButton.png" alt="Start Icon">
+      </button>          
+    </div>
+    <textarea id="outBox" placeholder="Loading" class="box2"></textarea>
+
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/tesseract.js@v2.0.0-alpha.13/dist/tesseract.min.js"></script>
 </body>
 </html>
 
